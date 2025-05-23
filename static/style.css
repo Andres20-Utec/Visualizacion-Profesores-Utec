@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #004488;
+}
+
+#visualization {
+    display: flex;
+    width: 100%;
+    height: 700px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #888888;
+    background-color: white;
+}
+
+svg {
+    flex-grow: 1;
+    height: 100%;
+}
+
+/* Styles for the network elements */
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 1.5px;
+}
+
+/* Node is now a group <g> containing image and circle */
+.node {
+    cursor: pointer;
+}
+
+.node image {
+     /* Image is clipped to a circle by the clipPath */
+     /* No border or border-radius needed here directly */
+}
+
+.node circle {
+    /* This circle is the border/background, drawn *after* the image */
+    fill: none; /* Transparent fill to show the image */
+    stroke: steelblue; /* Default border color */
+    stroke-width: 3px; /* Default border width */
+}
+
+
+/* Highlight styles */
+.node.highlighted circle {
+    stroke: orange; /* Highlight border */
+    stroke-width: 4px;
+}
+
+.link.highlighted {
+    stroke: orange;
+    stroke-opacity: 1;
+    stroke-width: 2.5px;
+}
+
+#info-panel {
+    width: 300px;
+    min-width: 250px; /* Ensure it doesn't collapse too much */
+    padding: 20px;
+    border-left: 1px solid #ccc;
+    background-color: #eee;
+    overflow-y: auto; /* Add scrolling if content overflows */
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+#info-panel h2 {
+    margin-top: 0;
+}
+
+#info-panel p {
+    margin-bottom: 8px; /* Slightly less space */
+    font-size: 0.9em;
+    word-wrap: break-word; /* Prevent long text overflowing */
+}
+#info-panel img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px; /* Optional: slightly rounded corners for image */
+    margin-bottom: 10px;
+    display: block; /* Center image */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc; /* Optional: small border around image */
+}
+
+/* Tooltip style (if you were using d3-tip or similar, but not used in this hover method) */
+/*
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+}
+*/

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTEC Faculty Network Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>UTEC Faculty Network</h1>
+    <p>Visualize potential connections between UTEC faculty members based on shared background attributes.</p>
+
+    <div>
+        <label for="relationship-select">Choose Relationship Type:</label>
+        <select id="relationship-select">
+            <option value="university">Shared University</option>
+            <option value="country">Shared University Country</option>
+            <option value="degree">Shared Highest Degree</option>
+        </select>
+    </div>
+
+    <div id="visualization">
+        <svg></svg>
+        <div id="info-panel">
+            <h2>Node Information</h2>
+            <p>Hover over a node to see details.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
