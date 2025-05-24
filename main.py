@@ -3,7 +3,6 @@ import os
 import pandas as pd
 import networkx as nx
 import json
-import io
 import warnings
 
 # Ignorar advertencias de NetworkX (por ejemplo, si el grafo está vacío o singular)
@@ -137,9 +136,6 @@ if __name__ == '__main__':
     if not os.path.exists(static_dir):
         os.makedirs(static_dir)
      # Ensure data directory exists (though we serve from memory now, was for file saving)
-    data_dir = 'data1'
-    if not os.path.exists(data_dir):
-        os.makedirs(data_dir)
 
     # Run the Flask development server
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
