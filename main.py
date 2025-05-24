@@ -131,11 +131,5 @@ def static_files(filename):
 
 
 if __name__ == '__main__':
-    # Ensure static directory exists for CSS/JS
-    static_dir = 'static'
-    if not os.path.exists(static_dir):
-        os.makedirs(static_dir)
-     # Ensure data directory exists (though we serve from memory now, was for file saving)
-
     # Run the Flask development server
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
